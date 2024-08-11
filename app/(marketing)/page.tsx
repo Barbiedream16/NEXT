@@ -1,11 +1,15 @@
 import { infos } from "@/config/landing";
-import BentoGrid from "@/components/sections/bentogrid";
-import Features from "@/components/sections/features";
+import Hyperfeatures from "@/components/sections/hyperfeatures";
 import HeroLanding from "@/components/sections/hero-landing";
-import InfoLanding from "@/components/sections/info-landing";
-import Powered from "@/components/sections/powered";
 import PreviewLanding from "@/components/sections/preview-landing";
+import Powered from "@/components/sections/powered";
+import InfoLanding from "@/components/sections/info-landing";
 import Testimonials from "@/components/sections/testimonials";
+import PricingPage from "@/components/sections/chocpricing";
+import Newsletter from "@/components/sections/hypernewsletter";
+import FAQComponent from "@/components/sections/chocfaq";
+
+
 
 export default function IndexPage() {
   return (
@@ -13,11 +17,13 @@ export default function IndexPage() {
       <HeroLanding />
       <PreviewLanding />
       <Powered />
-      <BentoGrid />
       <InfoLanding data={infos[0]} reverse={true} />
       {/* <InfoLanding data={infos[1]} /> */}
-      <Features />
+      <Hyperfeatures />
+      <PricingPage />
       <Testimonials />
+      <FAQComponent />
+      <Newsletter />
     </>
   );
 }

@@ -1,0 +1,35 @@
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+
+const Newsletter: React.FC = () => {
+  return (
+      <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-md">
+          <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white">
+            Want us to email you with the latest blockbuster news?
+          </strong>
+
+          <form className="mt-6">
+            <div className="relative max-w-lg">
+              <label className="sr-only" htmlFor="email"> Email </label>
+              <Input
+                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                id="email"
+                type="email"
+                placeholder="john@doe.com"
+              />
+              <Button
+                className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+                type="submit"
+              >
+                Subscribe
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div>
+  );
+};
+
+
+export default Newsletter;

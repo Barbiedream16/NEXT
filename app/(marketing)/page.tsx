@@ -1,6 +1,7 @@
 import { infos } from "@/config/landing";
 import Hyperfeatures from "@/components/sections/hyperfeatures";
 import HeroLanding from "@/components/sections/hero-landing";
+import Grid from "@/components/sections/chocgrid";
 import PreviewLanding from "@/components/sections/preview-landing";
 import Powered from "@/components/sections/powered";
 import InfoLanding from "@/components/sections/info-landing";
@@ -21,6 +22,7 @@ export default function IndexPage() {
       {/* <InfoLanding data={infos[1]} /> */}
       <Hyperfeatures />
       <PricingPage />
+      <Grid />
       <Testimonials />
       <FAQComponent />
       <Newsletter />

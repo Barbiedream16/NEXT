@@ -14,7 +14,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, value }) => {
   return (
     <Accordion.Item value={value} className="border-b border-gray-200 dark:border-gray-700">
       <Accordion.Header className="flex">
-        <Accordion.Trigger className="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180">
+        <Accordion.Trigger className="flex flex-1 items-center justify-between py-4 font-medium transition-all  [&[data-state=open]>svg]:rotate-180">
           {question}
           <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
         </Accordion.Trigger>
@@ -66,21 +66,7 @@ const FAQComponent: React.FC = () => {
             <FAQItem key={faq.value} question={faq.question} answer={faq.answer} value={faq.value} />
           ))}
         </Accordion.Root>
-        <div className="mt-8 text-center">
-          <p className="text-base text-muted-foreground">
-            Still have questions?
-          </p>
-          <Link 
-            href="/contact" 
-            className={cn(
-              "mt-3 inline-flex items-center px-4 py-2 border border-transparent",
-              "text-base font-medium rounded-md shadow-sm",
-              "text-white bg-primary hover:bg-primary/90"
-            )}
-          >
-            Contact us
-          </Link>
-        </div>
+        
       </div>
     </div>
   );

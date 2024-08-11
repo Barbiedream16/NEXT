@@ -29,8 +29,11 @@ import {
   Settings,
   SunMedium,
   Trash,
+  Bell,
   User,
   X,
+  Heart,
+  Beaker,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -43,6 +46,9 @@ export const Icons = {
   bookOpen: BookOpen,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
+  heart: Heart,
+  beaker: Beaker,
+  bell: Bell,
   check: Check,
   close: X,
   copy: Copy,

@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeaderSection } from "@/components/shared/header-section";
 import MaxWidthWrapper from "@/components/shared/max-width-wrapper";
-import { Button } from "@/components/ui/button"
 
 interface FeatureProps {
   title: string;
@@ -83,16 +82,6 @@ const Hyperfeatures: React.FC = () => {
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button
-            variant="default"
-            size="lg"
-            className="bg-pink-600 hover:bg-pink-700 focus:ring-yellow-400"
-          >
-            Get Started Today
-          </Button>
         </div>
         </MaxWidthWrapper>
       </div>

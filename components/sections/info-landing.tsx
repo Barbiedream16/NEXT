@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { InfoLdg } from "@/types";
+import { Button } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/shared/icons";
@@ -24,6 +25,7 @@ export default function InfoLanding({
           <p className="mt-4 text-base text-muted-foreground">
             {data.description}
           </p>
+          
           <dl className="mt-6 space-y-4 leading-7">
             {data.list.map((item, index) => {
               const Icon = Icons[item.icon || "arrowRight"];
@@ -39,8 +41,11 @@ export default function InfoLanding({
                 </div>
               );
             })}
+            
           </dl>
+      
         </div>
+        
         <div
           className={cn(
             "overflow-hidden rounded-xl border lg:-m-4",
@@ -56,9 +61,13 @@ export default function InfoLanding({
               height={500}
               priority={true}
             />
+            
           </div>
+          
         </div>
+        
       </MaxWidthWrapper>
+  
     </div>
   );
 }

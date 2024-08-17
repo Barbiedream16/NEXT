@@ -9,6 +9,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./ui/**/*.{ts,tsx}",
     "./content/**/*.{md,mdx}",
+    "./stories/**/*.{ts,tsx,md,mdx}",  // Add this line to include the `stories` folder
   ],
   future: {
     hoverOnlyWhenSupported: true,

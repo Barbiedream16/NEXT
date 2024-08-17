@@ -9,6 +9,8 @@ import Testimonials from "@/components/sections/testimonials";
 import PricingPage from "@/components/sections/chocpricing";
 import Newsletter from "@/components/sections/hypernewsletter";
 import FAQComponent from "@/components/sections/chocfaq";
+import Welcome from "@/components/modals/quizwelcome";
+
 
 
 
@@ -26,6 +28,8 @@ export default function IndexPage() {
       <Testimonials />
       <FAQComponent />
       <Newsletter />
+      <Welcome />
+
     </>
   );
 }

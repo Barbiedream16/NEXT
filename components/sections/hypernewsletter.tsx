@@ -1,20 +1,46 @@
-'use client';
-
-import React from 'react';
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import React, { useState } from 'react';
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/shared/icons";
 
-const Newsletter: React.FC = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Handle form submission logic here
+export interface HyperNewsletterProps {
+  theme?: 'light' | 'dark';
+  size?: 'small' | 'medium' | 'large';
+  label: string;
+}
+
+const HyperNewsletter: React.FC<HyperNewsletterProps> = ({
+  theme = 'light',
+  size = 'medium',
+  label,
+}) => {
+  const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (email) {
+      setSubmitted(true);
+    }
   };
 
+  if (submitted) {
+    return (
+      <div className="w-full max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-md text-center">
+          <h2 className="text-2xl font-bold text-[var(--color-text)]">Thank You!</h2>
+          <p className="mt-4 text-[var(--color-text)]">
+            We've sent a confirmation email to {email}. Please check your inbox to complete the subscription process.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+    <div className="w-full max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-md">
-        <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white">
+        <strong className="block text-center text-xl font-bold text-[var(--color-text)] sm:text-3xl">
           Want us to email you with the latest blockbuster news?
         </strong>
 
@@ -25,15 +51,21 @@ const Newsletter: React.FC = () => {
               <Input
                 type="email"
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email address"
-                className="w-full rounded-md border-gray-200 bg-white p-3 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-yellow-400 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                className="w-full rounded-md border-[var(--color-secondary)] bg-[var(--color-background)] p-3 shadow-sm transition focus:border-[var(--color-primary)] focus:outline-none focus:ring focus:ring-[var(--color-primary)] text-[var(--color-text)]"
               />
             </div>
             <Button
               type="submit"
-              className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
+              className={`group mt-4 flex w-full items-center justify-center gap-2 rounded-md px-5 py-3 transition focus:outline-none focus:ring focus:ring-[var(--color-primary)] sm:mt-0 sm:w-auto storybook-button--${size}`}
+              style={{ 
+                backgroundColor: 'var(--color-primary)',
+                color: 'var(--color-background)'
+              }}
             >
-              <span className="text-sm font-medium">Sign Up</span>
+              <span className="text-sm font-medium">{label}</span>
               <Icons.arrowRight className="size-5 rtl:rotate-180" />
             </Button>
           </form>
@@ -43,4 +75,4 @@ const Newsletter: React.FC = () => {
   );
 };
 
-export default Newsletter;
+export default HyperNewsletter;

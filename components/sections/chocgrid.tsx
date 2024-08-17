@@ -13,7 +13,7 @@ const Feature: React.FC<FeatureProps> = ({ title, icon, children }) => {
   return (
     <div>
       <div className="mb-4">
-        <Icon className="w-12 h-12 text-brand-700 dark:text-brand-400" />
+        <Icon className="w-12 h-12 text-pink-500 dark:text-brand-400" />
       </div>
       <h3 className="mb-3 text-lg font-bold leading-tight text-gray-900 dark:text-gray-100">
         {title}
